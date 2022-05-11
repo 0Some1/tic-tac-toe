@@ -1,10 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('pre-build') {
+             sh "nmp install"
+        }
         stage('build') {
-            steps {
-                sh 'npm install'
-                sh 'npm audit fix --force'
+            steps { 
                 sh 'npm run build'
                 echo "build is done!!!!!!" 
             }
@@ -17,13 +18,5 @@ pipeline {
         
         
     }
-    post {
-        always {
-            sh 'npm start'
-        }
-        failure {
-            echo  "depoly has failed!" 
-        }
-    
-    }
+ 
 }
