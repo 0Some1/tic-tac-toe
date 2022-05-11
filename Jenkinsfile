@@ -13,5 +13,16 @@ pipeline {
                  echo "test is done!!!!!" 
             }
         }
+        
+        
+    }
+    post {
+        always {
+            sh 'npm start'
+        }
+        failure {
+            echo  "depoly has failed!" 
+        }
+    
     }
 }
