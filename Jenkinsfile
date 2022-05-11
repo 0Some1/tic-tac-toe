@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm install'
+                sh 'npm audit fix --force'
                 sh 'npm run build'
                 echo "build is done!!!!!!" 
             }
