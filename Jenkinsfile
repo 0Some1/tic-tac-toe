@@ -19,7 +19,10 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'pm2 serve build 3000 --spa'
+                sh 'heroku git:remote -a tic-tac-toe25'
+                sh '$ git add .'
+                sh 'git commit -am "make it better" '
+                sh 'git push heroku master'
             }
         }
     }
