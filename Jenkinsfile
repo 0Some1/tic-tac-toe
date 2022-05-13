@@ -19,7 +19,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'pm2 serve build 3000 --spa'
+                sh 'vercel -t ${vercel_token} -c'
             }
         }
     }
