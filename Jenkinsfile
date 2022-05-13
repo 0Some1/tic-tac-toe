@@ -1,17 +1,26 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('pre-build') {
             steps {
-                echo 'Hello World'
+                sh 'npm install'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'npm run test'
             }
         }
     }
-    post { 
-        always { 
-            echo 'I will always say Hello again!'
+    post {
+        always {
+            sh 'git remote add heroku git@heroku.com:tic-tac-toe25.git'
+            sh 'git push heroku master'
         }
     }
 }
-
-
