@@ -19,11 +19,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'heroku login -i'
-                echo 'Lucky_Luciano000@protonmail.com'
-                echo 'fuck the system @55'
-                sh 'heroku git:remote -a tic-tac-toe25'
-                sh 'git push heroku master' 
+                sh 'pm2 serve build 3000 --spa'
             }
         }
     }
