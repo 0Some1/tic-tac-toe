@@ -26,12 +26,17 @@ pipeline {
     }
     post {
         always {
-            sh 'git remote add heroku git@htic-tac-toe25:myApp.git'
-            sh 'git push heroku master'
+            steps {
+                sh 'git remote add heroku git@htic-tac-toe25:myApp.git'
+                sh 'git push heroku master'
+            }
+            
             
         }
         failure {
-            echo "something has failed!" 
+            steps{
+                echo "something has failed!" 
+            }
         }
     }
  
