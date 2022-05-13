@@ -22,8 +22,7 @@ pipeline {
                 sh 'heroku git:remote -a tic-tac-toe25'
                 sh '$ git add .'
                 sh 'git commit -am "make it better" '
-                sh 'git push heroku master'
-                
+                sh 'git push heroku master' 
             }
         }
     }
