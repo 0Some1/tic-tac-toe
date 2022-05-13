@@ -7,6 +7,7 @@ pipeline{
         stage('pre-build'){
             steps{
                 sh 'npm install'
+                sh 'node -v'
             }
         }
         stage('build'){
