@@ -23,6 +23,7 @@ pipeline {
                 sh '$ git add .'
                 sh 'git commit -am "make it better" '
                 sh 'git push heroku master'
+                
             }
         }
     }
