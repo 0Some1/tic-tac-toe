@@ -6,12 +6,13 @@ pipeline{
     stages{
         stage('pre-build'){
             steps{
+                sh 'rm -rf node_modules'
                 sh 'npm install'
-                sh 'node -v'
             }
         }
         stage('build'){
             steps{
+                sh 'rm -rf build'
                 sh 'npm run build'
             }
         }
