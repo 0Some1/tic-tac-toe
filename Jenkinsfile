@@ -20,7 +20,7 @@ pipeline {
         stage('deploy') {
             steps {
                 sh 'heroku git:remote -a tic-tac-toe25'
-                sh '$ git add .'
+                sh 'git add .'
                 sh 'git commit -am "make it better" '
                 sh 'git push heroku master' 
             }
