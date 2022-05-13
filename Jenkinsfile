@@ -1,29 +1,17 @@
 pipeline {
-
     agent any
-
-    tools {nodejs "node"}
     stages {
-        stage('pre-build') {
-              steps {
-                sh 'npm install'
-                echo "build is done!" 
-
-        }
-        stage('build') {
+        stage('Example') {
             steps {
-                sh 'npm run build'
-                echo "build is done!"
+                echo 'Hello World'
             }
         }
-        stage('test') {
-            steps {
-                 sh "npm run test"
-                 echo "test is done!"
-            }
+    }
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
         }
-
-
     }
 }
+
 
