@@ -18,6 +18,7 @@ function App() {
 
                     <Route path="/two-player-mode" element={<TwoPlayerMode/>}/>
 
+
                     <Route path="/ai-mode" element={<AIMode/>}/>
 
                     <Route path="/about" element={<About/>}/>
